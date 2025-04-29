@@ -1,0 +1,205 @@
+:root {
+  --zinc-950: #09090b;
+  --zinc-900: #18181b;
+  --zinc-850: #1f1f23;
+  --zinc-800: #27272a;
+  --zinc-700: #3f3f46;
+  --zinc-500: #71717a;
+  --zinc-400: #a1a1aa;
+  --zinc-300: #d4d4d8;
+  --zinc-200: #e4e4e7;
+  --silver-700: #8c8c8c;
+  --silver-600: #a0a0a0;
+  --silver-500: #b0b0b0;
+  --silver-400: #c0c0c0;
+  --silver-300: #d0d0d0;
+  --silver-200: #e0e0e0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--zinc-900), var(--zinc-950) 40%, var(--zinc-900));
+  color: var(--zinc-300);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.login-container {
+  text-align: center;
+  margin-top: 100px;
+  background: linear-gradient(145deg, var(--zinc-800), var(--zinc-900));
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--zinc-700);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.login-container input {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.chat-container {
+  display: none;
+  flex-direction: column;
+  height: 80vh;
+  background: linear-gradient(145deg, var(--zinc-800), var(--zinc-900));
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--zinc-700);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: linear-gradient(135deg, var(--zinc-800), var(--zinc-850));
+  border-radius: 8px;
+  border: 1px solid var(--zinc-700);
+  margin-bottom: 1rem;
+  color: var(--silver-300);
+  font-weight: 600;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid var(--zinc-700);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--zinc-800), var(--zinc-850));
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--zinc-700);
+  position: relative;
+  animation: messageIn 0.3s ease-out;
+  transform-origin: top;
+}
+
+@keyframes messageIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.join,
+.message.leave {
+  background: linear-gradient(135deg, rgba(60, 60, 60, 0.4), rgba(40, 40, 40, 0.4));
+  color: var(--zinc-400);
+  font-style: italic;
+}
+
+.message.chat {
+  background: linear-gradient(135deg, rgba(80, 80, 80, 0.3), rgba(60, 60, 60, 0.3));
+}
+
+.message .username {
+  font-weight: 600;
+  margin-right: 5px;
+  color: var(--silver-300);
+  background: linear-gradient(135deg, var(--silver-400), var(--silver-200));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.message-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 100%;
+  height: 50px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--zinc-800), var(--zinc-850));
+  color: var(--zinc-300);
+  border: 1px solid var(--zinc-700);
+  border-radius: 8px;
+  transition: all 0.2s;
+  max-width: calc(100% - 100px);
+  height: 45px;
+  box-sizing: border-box;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: var(--silver-600);
+  box-shadow: 0 0 0 2px rgba(160, 160, 160, 0.2);
+}
+
+button {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, var(--silver-600), var(--silver-700));
+  color: var(--zinc-950);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  height: 45px;
+  box-sizing: border-box;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, var(--silver-500), var(--silver-600));
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--zinc-800), var(--zinc-850));
+  color: var(--zinc-300);
+  border: 1px solid var(--zinc-700);
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--silver-600);
+  box-shadow: 0 0 0 2px rgba(160, 160, 160, 0.2);
+}
+
+.room-select {
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(60, 60, 60, 0.4), rgba(40, 40, 40, 0.4));
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--zinc-700);
+  max-width: 100%;
+  box-sizing: border-box;
+}

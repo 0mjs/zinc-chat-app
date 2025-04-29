@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zinc Chat App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/chat.js"></script>
+</head>
+
+<body>
+  <div class="login-container" id="loginContainer">
+    <h1>Zinc Chat</h1>
+    <div>
+      <input type="text" id="username" placeholder="Your name" required>
+    </div>
+    <div class="room-select">
+      <h3>Join a Room</h3>
+      <button class="room-btn" data-room="general">General</button>
+      <button class="room-btn" data-room="tech">Tech</button>
+      <button class="room-btn" data-room="random">Random</button>
+      <div style="margin-top: 10px;">
+        <input type="text" id="customRoom" placeholder="Custom room name">
+        <button id="joinCustomRoom">Join</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+      <div>
+        Room: <span id="roomName"></span>
+      </div>
+      <div>
+        Logged in as: <span id="userDisplay"></span>
+      </div>
+      <button id="leaveRoom">Leave Room</button>
+    </div>
+    <div class="messages" id="messages"></div>
+    <form class="message-form" id="messageForm">
+      <input type="text" class="message-input" id="messageInput" placeholder="Type your message..." autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</body>
+
+</html>
